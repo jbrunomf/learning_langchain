@@ -1,6 +1,6 @@
 import os
 
-from langchain_openai import OpenAI, ChatOpenAI
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
 load_dotenv(dotenv_path=".env.development")
