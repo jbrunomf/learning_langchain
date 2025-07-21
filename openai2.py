@@ -2,7 +2,7 @@ import os
 
 from langchain_openai import OpenAI, ChatOpenAI
 from dotenv import load_dotenv
-from langchain_community.cache import InMemoryCache
+from langchain_community.cache import InMemoryCache, SQLiteCache
 from langchain.globals import set_llm_cache
 
 load_dotenv(dotenv_path=".env.development")
@@ -11,9 +11,9 @@ openapi_key = os.getenv("OPENAI_API_KEY")
 
 model = OpenAI()
 
-set_llm_cache(InMemoryCache())
+set_llm_cache(SQLiteCache())
 
-prompt = "Quém foi Alan Turing?"
+prompt = "Qual o modelo de placa de vídeo mais vendido de todos os tempo?"
 
 response1 = model.invoke(prompt)
 print(response1)
